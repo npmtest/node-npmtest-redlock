@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-redlock",     "homepage": "https://github.com/npmtest/node-npmtest-redlock",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-redlock.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [redlock (v2.1.0)](https://github.com/mike-marcacci/node-redlock)  [![npm package](https://img.shields.io/npm/v/npmtest-redlock.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-redlock) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-redlock.svg)](https://travis-ci.org/npmtest/node-npmtest-redlock)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-redlock",
+    "keywords": [
+        "coverage",
+        "test",
+        "redlock"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_redlock.js",
+    "name": "npmtest-redlock",
+    "nameAlias": "npmtest_redlock",
+    "nameOriginal": "npmtest-redlock",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-redlock.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.26"
+}
